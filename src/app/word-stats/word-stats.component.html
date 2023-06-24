@@ -1,0 +1,45 @@
+<div *ngIf="data">
+    <h2>Largest 5 Words:</h2>
+    <table [class.stats-table]="true">
+        <tr>
+            <td *ngFor="let word of data.LargestFiveWords">{{ word }}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="data">
+    <h2>Smallest 5 Words:</h2>
+    <table [class.stats-table]="true">
+        <tr>
+            <td *ngFor="let word of data.SmallestFiveWords">{{ word }}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="data">
+    <h2>Most Frequent 10 Words:</h2>
+    <table [class.stats-table]="true">
+        <tr>
+            <td *ngFor="let item of data.MostFrequentTenWords">{{ item.Key }}: {{ item.Value }}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="data">
+    <h2>Characters:</h2>
+    <table [class.stats-table]="true">
+        <ng-container *ngFor="let char of data.Characters; let i = index">
+            <tr *ngIf="i % 5 === 0">
+                <td>{{ data.Characters[i]?.Key }}: {{ data.Characters[i]?.Value }}</td>
+                <td *ngIf="i + 1 < data.Characters.length">{{ data.Characters[i + 1]?.Key }}: {{ data.Characters[i +
+                    1]?.Value }}</td>
+                <td *ngIf="i + 2 < data.Characters.length">{{ data.Characters[i + 2]?.Key }}: {{ data.Characters[i +
+                    2]?.Value }}</td>
+                <td *ngIf="i + 3 < data.Characters.length">{{ data.Characters[i + 3]?.Key }}: {{ data.Characters[i +
+                    3]?.Value }}</td>
+                <td *ngIf="i + 4 < data.Characters.length">{{ data.Characters[i + 4]?.Key }}: {{ data.Characters[i +
+                    4]?.Value }}</td>
+            </tr>
+        </ng-container>
+    </table>
+</div>
