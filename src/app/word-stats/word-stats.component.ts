@@ -8,8 +8,8 @@ import { WordstatsService } from './wordstats.service';
   styleUrls: ['./word-stats.component.css']
 })
 export class WordStatsComponent {
-    // url = "http://localhost:5026/stats";
-    url = "https://wordstats20230625015043.azurewebsites.net/stats";
+    url = "http://localhost:5026/stats";
+    // url = "https://wordstats20230625015043.azurewebsites.net/stats";
     data: any;
     refreshSubscription: Subscription = new Subscription();
     
