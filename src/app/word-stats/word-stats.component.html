@@ -1,4 +1,8 @@
 <div *ngIf="data">
+    <h2>Total Words: {{ data.TotalWords }}, Total Characters: {{ data.TotalCharacters }}</h2>
+</div>
+
+<div *ngIf="data">
     <h2>Largest 5 Words:</h2>
     <table [class.stats-table]="true">
         <tr>
